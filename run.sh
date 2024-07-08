@@ -1,0 +1,1 @@
+streamlit run /home/kunalchand/Desktop/Projects/Others/rag-app/app2.py
