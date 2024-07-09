@@ -119,7 +119,7 @@ def initial_setup(chatGroq):
 
     system_msg_template = SystemMessagePromptTemplate.from_template(
         template="""Answer the question as truthfully as possible using the provided context, 
-    and if the answer is not contained within the text below, say 'I don't know' and suggest user to upload relevant pdf documents."""
+    and if the answer is not contained within the text below, say 'I don't know'. Suggest user to upload relevant pdf documents ONLY IF you don't know."""
     )
 
     human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
