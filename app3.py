@@ -76,7 +76,7 @@ def delete_all_vectors_in_pinecone(pinecone_index):
 def find_match(user_question, pinecone_index):
     result = get_similar_vector_from_pinecone(user_question, pinecone_index)
     if len(result["matches"]) < 2:
-        return "Sorry, I could not answer this question. The PDFs you provided did not contain enough information related to the question."
+        return "Sorry, I could not answer this question. The PDFs you provided did not contain enough information related to the question. Please upload relevant PDFs for me to understand the context."
     else:
         return (
             result["matches"][0]["metadata"]["text"]
@@ -119,7 +119,7 @@ def initial_setup(chatGroq):
 
     system_msg_template = SystemMessagePromptTemplate.from_template(
         template="""Answer the question as truthfully as possible using the provided context, 
-    and if the answer is not contained within the text below, say 'I don't know'"""
+    and if the answer is not contained within the text below, say 'I don't know' and suggest user to upload relevant pdf documents."""
     )
 
     human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
@@ -144,8 +144,6 @@ def initial_setup(chatGroq):
 
 def main():
     st.set_page_config(page_title="PDF Chatbot", page_icon="📄")
-
-    st.markdown("# PDF Langchain Chatbot")
 
     # API Token Key Setup
     groq = Groq(
@@ -188,6 +186,9 @@ def main():
                 )
                 st.success("Done!")
 
+    # Chatbot
+    st.markdown("# PDF Langchain Chatbot")
+
     response_container = st.container()  # container for chat history
     textcontainer = st.container()  # container for text box
 
@@ -198,8 +199,8 @@ def main():
                 conversation_string = get_conversation_string()
                 # st.code(conversation_string)
                 refined_query = query_refiner(conversation_string, query, groq)
-                st.subheader("Refined Question:")
-                st.write(refined_query)
+                # st.subheader("Refined Question:")
+                # st.write(refined_query)
                 context = find_match(refined_query, pinecone_index)
                 # print(context)
                 response = conversation.predict(
