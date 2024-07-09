@@ -168,7 +168,7 @@ def main():
 
     # Upload PDF Documents
     with st.sidebar:
-        st.title("Submit Documents")
+        st.title("Submit Documents Here")
         pdf_docs = st.file_uploader(
             "Upload PDF Documents",
             type="pdf",
