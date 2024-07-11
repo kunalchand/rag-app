@@ -106,7 +106,9 @@ def get_conversation_string():
 
 def initial_setup(chatGroq):
     if "responses" not in st.session_state:
-        st.session_state["responses"] = ["How can I assist you?"]
+        st.session_state["responses"] = [
+            "Created by [Kunal Chand](https://kunalchand.github.io/portfolio/) with ❤️\n\nHow can I assist you?"
+        ]
 
     if "requests" not in st.session_state:
         st.session_state["requests"] = []
@@ -119,7 +121,7 @@ def initial_setup(chatGroq):
 
     system_msg_template = SystemMessagePromptTemplate.from_template(
         template="""Answer the question as truthfully as possible using the provided context, 
-    and if the answer is not contained within the text below, say 'I don't know'. Suggest user to upload relevant pdf documents ONLY IF you don't know."""
+    and if the answer is not contained within the text below, say 'I don't know'. Suggest user to upload relevant pdf documents ONLY IF you don't know. User may refer to the context by the word 'document' or 'context'."""
     )
 
     human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
@@ -143,7 +145,7 @@ def initial_setup(chatGroq):
 
 
 def main():
-    st.set_page_config(page_title="PDF Chatbot", page_icon="📄")
+    st.set_page_config(page_title="PDF Chatbot", page_icon="🤖")
 
     # API Token Key Setup
     groq = Groq(
