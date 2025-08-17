@@ -21,4 +21,4 @@ pip install -r requirements.txt
 
 # Run Streamlit app
 echo "🚀 Starting Streamlit..."
-python -m streamlit run /home/kunalchand/Desktop/Projects/Others/rag-app/src/app/streamlit_app.py
+python -m streamlit run src/app/streamlit_app.py

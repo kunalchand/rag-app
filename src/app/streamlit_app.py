@@ -25,7 +25,7 @@ def get_namespace():
     return "default"
 
 
-if __name__ == "__main__":
+def main():
     configure_logging(level=settings.log_level)
     log = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     # Instantiate dependencies
     if not settings.groq_api_key or not settings.pinecone_api_key:
         st.error("Missing GROQ_API_KEY or PINECONE_API_KEY in environment.")
-        sys.exit(1)
+        return
 
     store = PineconeStore(
         api_key=settings.pinecone_api_key,
@@ -109,3 +109,7 @@ if __name__ == "__main__":
             except Exception:
                 log.exception("Chat_failed")
                 st.error("Something went wrong answering your question. See logs.")
+
+
+if __name__ == "__main__":
+    main()
