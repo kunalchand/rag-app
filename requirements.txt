@@ -1,7 +1,7 @@
 # Core dependencies
 blinker==1.8.2
-python-dotenv==1.0.1
-python-json-logger==3.3.0
+python-dotenv
+python-json-logger
 
 # Streamlit UI
 streamlit==1.36.0
@@ -18,8 +18,8 @@ pinecone==4.0.0
 PyPDF2==3.0.1
 
 # Transformers + Embeddings
-transformers==4.42.3
-sentence-transformers==2.7.0
+transformers
+sentence-transformers
 torch==2.3.0
 torchvision==0.18.0
 torchaudio==2.3.0
