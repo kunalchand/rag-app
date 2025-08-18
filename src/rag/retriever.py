@@ -1,5 +1,6 @@
 from typing import List, Dict, Any
-from ..vectorstore.pinecone_store import PineconeStore
+
+from src.vectorstore.pinecone_store import PineconeStore
 
 
 class Retriever:

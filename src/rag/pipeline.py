@@ -1,6 +1,7 @@
 from typing import List
-from ..vectorstore.pinecone_store import PineconeStore
-from ..vectorstore.schemas import VectorRecord
+
+from src.vectorstore.pinecone_store import PineconeStore
+from src.vectorstore.schemas import VectorRecord
 
 
 class RAGPipeline:
