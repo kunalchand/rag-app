@@ -1,4 +1,11 @@
 # FILE: src/app/streamlit_app.py
+import sys
+from pathlib import Path
+
+# Explicitly set `src` as the root
+src_directory = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(src_directory))
+
 import streamlit as st
 from typing import Optional
 
