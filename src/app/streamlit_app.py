@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_chat import message
 
-from src.service.pdf_service import get_pdf_text, get_text_chunks
+from src.service.pdf_service import PDFService
 from src.service.embeddings_service import EmbeddingsService
 from src.service.pinecone_service import PineconeService
 from src.service.chat_service import ChatService
@@ -12,7 +12,7 @@ def main():
     st.set_page_config(page_title=settings.APP_TITLE, page_icon=settings.APP_ICON)
 
     # Initialize services
-    pdf_service = (get_pdf_text, get_text_chunks)
+    pdf_service = PDFService()
     embeddings_service = EmbeddingsService()
     pinecone_service = PineconeService()
     chat_service = ChatService()
@@ -26,8 +26,8 @@ def main():
         if st.button("Send to Pinecone"):
             with st.spinner("Processing..."):
                 pinecone_service.delete_all_vectors()
-                raw_text = get_pdf_text(pdf_docs)
-                chunks = get_text_chunks(raw_text)
+                raw_text = pdf_service.get_pdf_text(pdf_docs)
+                chunks = pdf_service.get_text_chunks(raw_text)
                 embeddings = embeddings_service.embed_texts(chunks)
                 pinecone_service.upsert_vectors(chunks, embeddings)
                 st.success("Done!")
