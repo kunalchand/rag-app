@@ -1,16 +1,25 @@
+# Core dependencies
 blinker==1.8.2
-groq==0.9.0
-langchain==0.2.7
-langchain_community==0.2.6
-langchain_groq==0.1.6
-pinecone==4.0.0
-PyPDF2==3.0.1
+python-dotenv==1.0.1
+python-json-logger==3.3.0
+
+# Streamlit UI
 streamlit==1.36.0
 streamlit_chat==0.1.1
+
+# LangChain + Groq stack (latest compatible)
+langchain==0.2.7
+langchain-community==0.2.6
+langchain-groq==0.1.6
+groq==0.9.0
+
+# Vector DB + PDF
+pinecone==4.0.0
+PyPDF2==3.0.1
+
+# Transformers + Embeddings
 transformers==4.42.3
-sentence_transformers==2.7.0
+sentence-transformers==2.7.0
 torch==2.3.0
 torchvision==0.18.0
 torchaudio==2.3.0
-python-json-logger==3.3.0
-python-dotenv
