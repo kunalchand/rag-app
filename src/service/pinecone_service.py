@@ -1,6 +1,6 @@
 from pinecone import Pinecone
 
-from config import settings
+from src.config import settings
 
 
 class PineconeService:

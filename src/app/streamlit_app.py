@@ -1,11 +1,11 @@
 import streamlit as st
 from streamlit_chat import message
 
-from service.pdf_service import get_pdf_text, get_text_chunks
-from service.embeddings_service import EmbeddingsService
-from service.pinecone_service import PineconeService
-from service.chat_service import ChatService
-from config import settings
+from src.service.pdf_service import get_pdf_text, get_text_chunks
+from src.service.embeddings_service import EmbeddingsService
+from src.service.pinecone_service import PineconeService
+from src.service.chat_service import ChatService
+from src.config import settings
 
 
 def main():

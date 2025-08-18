@@ -1,7 +1,7 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import PyPDF2
 
-from config import settings
+from src.config import settings
 
 
 def get_pdf_text(pdf_docs):

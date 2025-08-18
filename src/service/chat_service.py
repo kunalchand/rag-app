@@ -10,7 +10,7 @@ from langchain.prompts import (
     SystemMessagePromptTemplate,
 )
 
-from config import settings
+from src.config import settings
 
 
 class ChatService:

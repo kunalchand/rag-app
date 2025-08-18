@@ -8,6 +8,9 @@ PyPDF2==3.0.1
 streamlit==1.36.0
 streamlit_chat==0.1.1
 transformers==4.42.3
-sentence_transformers
+sentence_transformers==2.7.0
+torch==2.3.0
+torchvision==0.18.0
+torchaudio==2.3.0
 python-json-logger==3.3.0
 python-dotenv
