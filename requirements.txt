@@ -10,3 +10,4 @@ streamlit_chat==0.1.1
 transformers==4.42.3
 sentence_transformers
 python-json-logger==3.3.0
+python-dotenv
