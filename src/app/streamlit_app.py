@@ -24,7 +24,9 @@ def main() -> None:
     pdf_service = PDFService()
     embeddings_service = EmbeddingsService()
     pinecone_service = PineconeService()
-    chat_service = ChatService()
+    if "chat_service" not in st.session_state:
+        st.session_state.chat_service = ChatService()
+    chat_service = st.session_state.chat_service
 
     # Render sidebar UI for PDF upload
     uploaded_pdfs: Optional[list] = ui.sidebar_ui(
