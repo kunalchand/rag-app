@@ -9,7 +9,8 @@ from langchain.prompts import (
     MessagesPlaceholder,
     SystemMessagePromptTemplate,
 )
-from configs import settings
+
+from config import settings
 
 
 class ChatService:

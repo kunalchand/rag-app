@@ -1,5 +1,6 @@
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
-from configs import settings
+
+from config import settings
 
 
 class EmbeddingsService:
