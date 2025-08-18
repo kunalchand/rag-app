@@ -11,7 +11,7 @@ streamlit_chat==0.1.1
 langchain==0.2.7
 langchain-community==0.2.6
 langchain-groq==0.1.6
-groq==0.9.0
+groq==0.13.0
 
 # Vector DB + PDF
 pinecone==4.0.0
